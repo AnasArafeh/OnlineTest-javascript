@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>q5</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/bootstrap.css"  type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script language ="JavaScript" src="../js/bootstrap.js">	 </script>
+	<script language ="JavaScript" src="java.js">	 </script>
+	<script type="text/javascript">
+		window.onload = function dis(){	
+			var x5;	
+			var counter = 25;
+			var interval = setInterval(function() {
+				var inst = $("input[name='q5']:checked").val();
+				if(inst==null){
+					x5="";
+					localStorage.setItem('answer5',x5);	
+				}
+				else if(inst==1){
+					x5="correct";
+					localStorage.setItem('answer5',x5);	
+				}else if(inst!=1){	
+					x5="wrong";	
+					localStorage.setItem('answer5',x5);		
+				}
+				counter--;
+				if (counter <= 0) {
+					clearInterval(interval);
+					window.location.href="q6.html"; 
+					return;
+				}else{
+					$('#time5').text(counter);
+				}	
+			}, 1000);
+
+			$("#question5").click(function(){
+				window.location.href="q6.html";
+			});
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="row" style="margin-left: 300px;margin-top:250px;">
+			<div id="q5">
+				<b>5.The smallest of the UAE emirates is ...</b>
+				<br><input type="radio"  name="q5" value="1"> Fujeirah 
+				<br><input type="radio"  name="q5" value="2"> Ras Al Khaimah 
+				<br><input type="radio"  name="q5" value="3"> Dubai 
+				<br><input type="radio"  name="q5" value="4"> Ajman 
+				<br><br><input type="Button" name="" value="Next Question"  id="question5"  onClick= ""/>
+				<p id="">
+					you have <span id="time5">25 </span> seconds      
+				</p>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

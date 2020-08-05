@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>q1</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/bootstrap.css"  type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script language ="JavaScript" src="../js/bootstrap.js">	 </script>
+	<script language ="JavaScript" src="java.js">	 </script>
+	<script type="text/javascript">
+		window.onload = function dis(){	
+			var x1;
+			var counter = 25;
+			var interval = setInterval(function ab() {
+				var inst = $("input[name='q1']:checked").val();				
+				if(inst==null){
+					x1="";
+					localStorage.setItem('answer1',x1);
+					console.log(x1);	
+				}
+				else if(inst==3){
+					x1="correct";
+					localStorage.setItem('answer1',x1);
+					console.log(x1);
+					
+				}else if(inst!=3){	
+					x1="wrong";	
+					localStorage.setItem('answer1',x1);
+					console.log(x1);	
+				}
+				counter--;
+				if (counter <= 0) {
+					clearInterval(interval);
+					window.location.href="q2.html"; 
+					return;
+				}else{
+					$('#time').text(counter);
+				}
+			}, 1000);
+
+			$("#question1").click(function (){
+				window.location.href="q2.html";
+			});
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="row" style="margin-left: 300px;margin-top:250px;">
+			<div id="q1">
+				<b>1.Which is the northernmost emirate of the United Arab Emirates?</b><br/>
+				<input type="radio" name="q1" value="1" > Fujairah 
+				<br><input type="radio" name="q1" value="2" > Ras Al Khaimah
+				<br><input type="radio" name="q1" value="3"> Ajman
+				<br><input type="radio" name="q1" value="4"> Abu Dhabi
+				<br><br><input type="Button" name="" value="Next Question" id="question1" onClick="" />
+				<p id="">
+					you have <span id="time">25 </span> seconds      
+				</p>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

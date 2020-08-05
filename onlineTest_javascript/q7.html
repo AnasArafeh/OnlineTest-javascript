@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>q7</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/bootstrap.css"  type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script language ="JavaScript" src="../js/bootstrap.js">	 </script>
+	<script language ="JavaScript" src="java.js">	 </script>
+	<script type="text/javascript">
+		window.onload = function dis(){	
+			var x7;
+			var counter = 25;
+			var interval = setInterval(function() {
+				var inst = $("input[name='q7']:checked").val();
+				if(inst==null){
+					x7="";
+					localStorage.setItem('answer7',x7);	
+				}
+				else if(inst==2){
+					x7="correct";			
+					localStorage.setItem('answer7',x7);
+				}else if(inst!=2){	
+					x7="wrong";
+					localStorage.setItem('answer7',x7);				
+				}
+				counter--;
+				if (counter <= 0) {
+					clearInterval(interval);
+					window.location.href="q8.html";
+					return;
+				}else{
+					$('#time7').text(counter);
+				}	
+			}, 1000);
+			$("#question7").click(function(){
+				window.location.href="q8.html";
+			});
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="row" style="margin-left: 300px;margin-top:250px;">
+			<div id="q7">
+				<b>7.The UAE shares borders with 2 countries, these countries are:</b>
+				<br><input type="radio"  name="q7" value="1"> Qatar and Oman 
+				<br><input type="radio"  name="q7" value="2"> Saudi Arabia and Qatar 
+				<br><input type="radio"  name="q7" value="3"> Saudi Arabia and Kuwait 
+				<br><input type="radio"  name="q7" value="4"> Saudi Arabia and Oman 
+				<br><br><input type="Button" name="" value="Next Question" id="question7"   onClick= ""/>
+				<p id="">
+					you have <span id="time7">25 </span> seconds      
+				</p>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

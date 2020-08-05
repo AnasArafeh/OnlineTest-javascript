@@ -1,0 +1,39 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Test</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<link rel="stylesheet" href="../css/bootstrap.css"  type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script language ="JavaScript" src="../js/bootstrap.js">	 </script>
+		<script language ="JavaScript" src="java.js">	 </script>
+		<script type="text/javascript">
+			window.onload = function dis(){	
+				$("#go1").click(function(){
+					var text;
+					text =$("input[type='text']").val();
+					if(text===""){
+						alert("enter your name");
+						location.reload()
+					}else if(text!==""){
+						localStorage.setItem('answer',text);
+						window.location.href="q1.html";
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row" style="margin-left: 300px;margin-top:250px;">
+				<div id="s1">
+					<p>Welcome to the test</p>
+					<p>Please enter your name below then click the button</p>
+					<input class=""type="text" id="Name" size=15>
+					<input type="submit" id="go1">
+				</div>
+				<br><br>
+			</div>
+		</div>		
+	</body>
+	</html>

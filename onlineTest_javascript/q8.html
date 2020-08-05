@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>q8</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/bootstrap.css"  type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script language ="JavaScript" src="../js/bootstrap.js">	 </script>
+	<script language ="JavaScript" src="java.js">	 </script>
+	<script type="text/javascript">
+		window.onload = function dis(){	
+			var x8;
+			var counter = 25;
+			var interval = setInterval(function() {
+				var inst = $("input[name='q8']:checked").val();
+				if(inst==null){
+					x8="";
+					localStorage.setItem('answer8',x8);	 		
+				}
+				else if(inst==1){
+					x8="correct";
+					localStorage.setItem('answer8',x8);			
+				}else if(inst!=1){	
+					x8="wrong";
+					localStorage.setItem('answer8',x8);			
+				}
+				counter--;
+				if (counter <= 0) {
+					clearInterval(interval);
+					window.location.href="q9.html"; 
+					return;
+				}else{
+					$('#time8').text(counter);
+				}	
+			}, 1000);
+			$("#question8").click(function(){
+				window.location.href="q9.html";
+			});
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="row" style="margin-left: 300px;margin-top:250px;">
+			<div id="q8">
+				<b>8.How long is the UAE coastline?</b>
+				<br><input type="radio"  name="q8" value="1"> 650 km 
+				<br><input type="radio"  name="q8" value="2"> 1650 km 
+				<br><input type="radio"  name="q8" value="3"> 1000 km 
+				<br><input type="radio"  name="q8" value="4"> 325 km 
+				<br><br><input type="Button" name="" value="Next Question" id="question8"   onClick= ""/>
+				<p id="">
+					you have <span id="time8">25 </span> seconds      
+				</p>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>
