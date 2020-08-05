@@ -21,7 +21,8 @@
 					total++;
 				}}
 
-				$("#q22").html(correct);		
+				$("#q22").html(correct);
+				$("#q22").append(" / "+total);		
 				$("#q11").html(localStorage.getItem('answer'));
 				
 				if(localStorage.getItem('answer1')===null||localStorage.getItem('answer1')===""){
@@ -31,8 +32,9 @@
 					$("#q12").html(localStorage.getItem('answer1')).css("color","green");
 				}else{
 					$("#q12").html(localStorage.getItem('answer1')).css("color","red");
+				}
 
-				}if(localStorage.getItem('answer2')===null||localStorage.getItem('answer2')===""){
+				if(localStorage.getItem('answer2')===null||localStorage.getItem('answer2')===""){
 					$("#q13").html("you missed the question").css("color","red");
 				}
 				else if(localStorage.getItem('answer2')==="correct"){
@@ -40,6 +42,7 @@
 				}else{
 					$("#q13").html(localStorage.getItem('answer2')).css("color","red");
 				}
+
 				if(localStorage.getItem('answer3')===null||localStorage.getItem('answer3')===""){
 					$("#q14").html("you missed the question").css("color","red");
 				}
@@ -48,6 +51,7 @@
 				}else{
 					$("#q14").html(localStorage.getItem('answer3')).css("color","red");
 				}
+
 				if(localStorage.getItem('answer4')===null||localStorage.getItem('answer4')===""){
 					$("#q15").html("you missed the question").css("color","red");
 				}
@@ -56,6 +60,7 @@
 				}else{
 					$("#q15").html(localStorage.getItem('answer4')).css("color","red");
 				}
+
 				if(localStorage.getItem('answer5')===null||localStorage.getItem('answer5')===""){
 					$("#q16").html("you missed the question").css("color","red");
 				}
@@ -64,6 +69,7 @@
 				}else{
 					$("#q16").html(localStorage.getItem('answer5')).css("color","red");
 				}
+
 				if(localStorage.getItem('answer6')===null||localStorage.getItem('answer6')===""){
 					$("#q17").html("you missed the question").css("color","red");
 				}
@@ -72,6 +78,7 @@
 				}else{
 					$("#q17").html(localStorage.getItem('answer6')).css("color","red");
 				}
+
 				if(localStorage.getItem('answer7')===null||localStorage.getItem('answer7')===""){
 					$("#q18").html("you missed the question").css("color","red");
 				}
@@ -80,6 +87,7 @@
 				}else{
 					$("#q18").html(localStorage.getItem('answer7')).css("color","red");
 				}
+
 				if(localStorage.getItem('answer8')===null||localStorage.getItem('answer8')===""){
 					$("#q19").html("you missed the question").css("color","red");
 				}
@@ -88,6 +96,7 @@
 				}else{
 					$("#q19").html(localStorage.getItem('answer8')).css("color","red");
 				}
+
 				if(localStorage.getItem('answer9')===null||localStorage.getItem('answer9')===""){
 					$("#q20").html("you missed the question").css("color","red");
 				}
@@ -96,6 +105,7 @@
 				}else{
 					$("#q20").html(localStorage.getItem('answer9')).css("color","red");
 				}
+
 				if(localStorage.getItem('answer10')===null||localStorage.getItem('answer10')===""){
 					$("#q21").html("you missed the question").css("color","red");
 				}
@@ -104,6 +114,7 @@
 				}else{
 					$("#q21").html(localStorage.getItem('answer10')).css("color","red");
 				}
+
 				$("#back1").click(function(){
 							localStorage.clear();
  							window.location.href="index.html";
